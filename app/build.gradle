@@ -1,0 +1,45 @@
+plugins {
+    id 'com.android.application'
+}
+
+/**
+ *Developer By @c1m0h4m3dd0tj4r
+ */
+android {
+    compileSdkVersion 30
+    buildToolsVersion "30.0.3"
+
+    defaultConfig {
+        applicationId "com.cimohamed.mopub_mediation_fan"
+        minSdkVersion 19
+        targetSdkVersion 30
+        versionCode 1
+        versionName "1.0"
+
+        multiDexEnabled true
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+    implementation 'com.facebook.android:audience-network-sdk:6.5.1'
+    implementation 'com.mopub.mediation:facebookaudiencenetwork:6.5.1.0'
+    implementation('com.mopub:mopub-sdk:+@aar') {
+        transitive = true
+    }
+
+    implementation 'androidx.appcompat:appcompat:1.3.0'
+    implementation 'com.google.android.material:material:1.4.0'
+
+}
